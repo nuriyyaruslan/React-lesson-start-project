@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { linkedinProfile, profileImage } from './Gallery';
 
+const html = `
+  <div>
+    <h1>Title</h1>
+    <p>Paragraph</p>
+  </div>
+`;
+
 export default class Contact extends Component {
 
   constructor(props) {
@@ -10,6 +17,10 @@ export default class Contact extends Component {
       age: '32',
       profession: 'Developer'
     }
+  }
+
+  changeUserValues = () => {
+    this.setState({profession: "Software engineer", name: 'Leyla', age: '24'});
   }
 
   render() {
@@ -27,6 +38,11 @@ export default class Contact extends Component {
         </ul>
         <p>Linkedin Profile: <a href={linkedinProfile.href} title={linkedinProfile.title} target={linkedinProfile.target}>Click me</a></p>
         <p>Linkedin Profile: <img className='profile-image' src={profileImage.src} title={profileImage.title} alt={profileImage.alt} /> </p>
+
+        <button
+          type="button"
+          onClick={this.changeUserValues}
+        >Change profession</button>
       </div>
     );
   }

@@ -2,6 +2,7 @@ import User from "./User";
 import styles from "./Users.module.css";
 
 function Users() {
+
   const users = [
     {
       id: 1,
@@ -36,6 +37,9 @@ function Users() {
       {users.map((user) => (
         <User key={user.id} user={user} />
       ))}
+
+      <input type="text" />
+
     </div>
   );
 }
